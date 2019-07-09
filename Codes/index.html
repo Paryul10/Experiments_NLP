@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title> Natural Language Processing </title>
+
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale = 1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="styles.css">
+
+	<script type="text/javascript" src="script.js"> </script>
+
+</head>
+
+<body>
+
+	<h1 id="pageheader" align="center"><b>Word Analysis</b></h1>
+
+	<h2><b> Experiment 1 </b></h2>
+
+	<br>
+
+	<div class="row" id="dropdown1" style="border:groove">
+		<p>Select a language which you know better</p>
+		<div class="col-md-12 school-options-dropdown text-center">
+			<select id="selectedEngorHin" autocomplete="off" onchange="display()">
+				<option value="" selected> ---CHOOSE LANGUAGE--- </option>
+				<option value="English"> English </option>
+				<option value="Hindi"> Hindi </option>
+			</select>
+		</div>
+	</div>
+	<!-- =================================================================================================================================== -->
+
+	<br><br><br>
+
+	<div class="row" id="dropdown2" hidden style="border:groove">
+		<div class="col-md-12 school-options-dropdown text-center">
+			<p>Select a word from the below dropbox and do a morphological analysis on that word</p>
+			<select id="selectword" autocomplete="off" onchange="choose()">
+				<option value="" selected> ---Select Word--- </option>
+			</select>
+		</div>
+	</div>
+
+	<br><br><br>
+
+	<p id="instruction" hidden>
+		Select the Correct morphological analysis for the above word using dropboxes (NOTE : na = not applicable)</p>
+
+	<table id="input_table" hidden>
+		<tr>
+			<td> WORD </td>
+			<td align="center" id="word" style="color:red">
+			</td>
+			<td align="center" id="word_ans" hidden></td>
+
+		</tr>
+
+		<tr>
+			<td> ROOT </td>
+			<td align="center">
+				<select id="root">
+					<option value="na" selected> na </option>
+				</select>
+			</td>
+			<td align="center" id="root_ans" hidden></td>
+
+		</tr>
+
+		<tr>
+			<td> CATEGORY </td>
+			<td align="center">
+				<select id="category">
+					<option value="verb"> verb </option>
+					<option value="noun"> noun </option>
+					<option value="na" selected> na </option>
+				</select>
+			</td>
+			<td align="center" id="category_ans" hidden></td>
+		</tr>
+
+		<tr>
+			<td> GENDER </td>
+			<td align="center">
+				<select id="gender">
+					<option value="male"> male </option>
+					<option value="female"> female </option>
+					<option value="na" selected> na </option>
+				</select>
+			</td>
+			<td align="center" id="gender_ans" hidden></td>
+		</tr>
+
+		<tr>
+			<td> NUMBER </td>
+			<td align="center">
+				<select id="number">
+					<option value="singular"> singular </option>
+					<option value="plural"> plural </option>
+					<option value="na" selected> na </option>
+				</select>
+			</td>
+			<td align="center" id="number_ans" hidden></td>
+		</tr>
+
+		<tr>
+			<td> PERSON </td>
+			<td align="center">
+				<select id="person">
+					<option value="first"> first </option>
+					<option value="second"> second </option>
+					<option value="third"> third </option>
+					<option value="na" selected> na </option>
+				</select>
+			</td>
+			<td align="center" id="person_ans" hidden></td>
+
+		</tr>
+
+		<tr>
+			<td> CASE </td>
+			<td align="center">
+				<select id="case">
+					<option value="direct"> direct </option>
+					<option value="oblique"> oblique </option>
+					<option value="na" selected> na </option>
+				</select>
+			</td>
+			<td align="center" id="case_ans" hidden></td>
+
+		</tr>
+
+		<tr>
+			<td> TENSE </td>
+			<td align="center">
+				<select id="tense">
+					<option value="simple-present"> simple-present </option>
+					<option value="simple-future"> simple-future </option>
+					<option value="present-continuous"> present-continuous </option>
+					<option value="past-continuous"> past-continuous </option>
+					<option value="future-continuous"> future-continuous </option>
+					<option value="present-perfect-continuous"> present-perfect-continuous </option>
+					<option value="past-perfect-continuous"> past-perfect-continuous </option>
+					<option value="future-perfect-continuous"> future-perfect-continuous </option>
+					<option value="simple-past"> simple-past </option>
+					<option value="present-perfect"> present-perfect </option>
+					<option value="past-perfect"> past-perfect </option>
+					<option value="future-perfect"> future-perfect </option>
+					<option value="na" selected> na </option>
+				</select>
+			</td>
+			<td align="center" id="tense_ans" hidden></td>
+		</tr>
+
+		<tr>
+			<td>
+				<button class="buttonc button2c" onclick="check()">Check</button>
+			</td>
+			<td>
+				<p id="verdict" hidden></p>
+			</td>
+			<td id="show_ans" hidden>
+				<button class="buttonc button2c" id="ans_button" onclick="show_answers()">Get Answer</button>
+			</td>
+		</tr>
+
+	</table>
+
+	<br><br><br>
+
+	<table id="answers" hidden>
+	</table>
+
+</body>
