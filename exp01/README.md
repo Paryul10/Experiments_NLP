@@ -2,7 +2,7 @@
 
 
 ## Open the src folder in terminal and run 
-''' python -m SimpleHTTPServer '''
+``` python -m SimpleHTTPServer ```
 
 ## In browser open 
-''' http://localhost:8000/index.html ''' 
+``` http://localhost:8000/index.html ```
