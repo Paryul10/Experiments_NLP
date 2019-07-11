@@ -16,6 +16,7 @@ var tense = ["simple-present", "simple-future", "present-continuous", "past-cont
 var eng_words = new Set();
 var hin_words = new Set();
 
+// these 2 helper functions generate data from the text file.
 function eng_gen() {
     var condition1 = function () {
         len_eng = corpus_eng.length;
@@ -45,6 +46,7 @@ function hin_gen() {
 eng_gen();
 hin_gen();
 
+// language selection and  display of dropdown
 function display() {
     lang = document.getElementById("selectedEngorHin").value;
 
@@ -88,6 +90,7 @@ function display() {
     }
 }
 
+//chose the combination fro dropdown
 function choose() {
     selected_word = document.getElementById("selectword").value;
     if (selected_word == "") {
@@ -134,7 +137,6 @@ function choose() {
         }
     }
 }
-
 
 // Function is called when the Check button is clicked, checks the input from the dropdowns and displays the verdict.
 function check() {

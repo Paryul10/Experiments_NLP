@@ -50,6 +50,7 @@ function hin_gen() {
 eng_gen();
 hin_gen();
 
+// language selection and  display of dropdown
 function display() {
     lang = document.getElementById("selectedEngorHin").value;
     root = document.getElementById("root").value;
@@ -112,6 +113,7 @@ function display() {
     }
 }
 
+//chose the combination fro dropdown
 function choose() {
     root = document.getElementById("root").value;
 
@@ -143,13 +145,14 @@ function choose() {
 
 }
 
-
+//Generates alert if word not selected
 function word_select() {
     selected_word = document.getElementById("selectword").value;
     if (selected_word == "") {
         alert("Select Word");
     }
 }
+
 // Function is called when the Check button is clicked, checks the input from the dropdowns and displays the verdict.
 function check() {
 
@@ -211,10 +214,6 @@ function check() {
         }
     }
 
-    // console.log(selected_word);
-    // console.log(buffer);
-    // console.log(count);
-
     // check array stores ,[ word, root(1), category(2), gender(3), number(4), case(5), person(6), lang, script, tense(9)] 
 
     if (count == 9) {
@@ -244,13 +243,12 @@ function check() {
     $('#verdict').show();
 }
 
+// to hide the answers, extra buttons and verdict
 function reset() {
     document.getElementById("ans_button").innerHTML = "Get Answer";
     $('#verdict').hide();
     $('#ans_div').hide();
     $('#answers').hide();
-
-
 }
 
 function show_answers() {
