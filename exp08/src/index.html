@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title> Natural Language Processing </title>
+
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale = 1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="styles.css">
+
+	<script type="text/javascript" src="script.js"> </script>
+
+</head>
+
+<body>
+
+	<h1 id="pageheader" align="center"><b>Building POS Tagger</b></h1>
+
+	<h2><b> Experiment 8</b></h2>
+
+	<br>
+
+	<div class="row" id="dropdown1" style="border:inset;">
+		<p>Select a language which you know better</p>
+		<div class="col-md-12 school-options-dropdown text-center">
+			<select id="selectedEngorHin" autocomplete="off" onchange="display()">
+				<option value="" selected> ---CHOOSE LANGUAGE--- </option>
+				<option value="English"> English </option>
+				<option value="Hindi"> Hindi </option>
+			</select>
+		</div>
+	</div>
+	<!-- =================================================================================================================================== -->
+
+	<br><br><br>
+
+	<div class="row" id="dropdown2" hidden>
+		<div class="col-md-12 school-options-dropdown text-center">
+			<p>First step is to train a corpus, select the size of a corpus</p>
+			<select id="selectsize" autocomplete="off" onchange="hide_ins()">
+				<option value="" selected> ---Select Size of Training corpus--- </option>
+				<option value="1k"> 1k </option>
+				<option value="10k"> 10k </option>
+				<option value="100k"> 100k </option>
+				<option value="300k"> 300k </option>
+			</select>
+		</div>
+	</div>
+
+	<br><br><br>
+
+	<div class="row" id="dropdown3" hidden>
+		<div class="col-md-12 school-options-dropdown text-center">
+			<p>Select the algorithm for training</p>
+			<select id="selectalgo" autocomplete="off" onchange="hide_ins()">
+				<option value="" selected> ---Select Algorithm for Training--- </option>
+				<option value="CRF"> CRF </option>
+				<option value="HMM"> HMM </option>
+			</select>
+		</div>
+	</div>
+
+	<br><br><br>
+
+	<div class="row" id="dropdown4" hidden>
+		<div class="col-md-12 school-options-dropdown text-center">
+			<p>Now, select feature for training</p>
+			<select id="selectfeature" autocomplete="off" onchange="hide_ins()">
+				<option value="" selected> ---Select Feature for Training--- </option>
+				<option value="bigram"> bigram </option>
+				<option value="trigram"> trigram </option>
+			</select>
+		</div>
+	</div>
+
+	<br><br><br>
+
+	<div id="train" align="center" hidden>
+		<button class="buttonc button2c" id="train_button" onclick="train_model()">Train</button>
+	</div>
+
+	<br><br><br>
+
+	<div id="instruction" align="center" hidden>
+		<p> Training is completed </p>
+		<p>Now, we have to do testing, a corpus of size 30k is chosen</p>
+		<p>Check the accuracy</p>
+	</div>
+
+	<div id="accuracy" align="center" hidden>
+		<button class="buttonc button2c" id="accuracy_button" onclick="get_accuracy()">Check Accuracy</button>
+	</div>
+
+	<br><br><br>
+
+	<div id="ans" align="center" hidden>
+		<p id="ais" style="color: black"><b>Accuracy is :</b></p>
+		<p id="aans" style="color: cadetblue"></p>
+	</div>
+
+</body>
