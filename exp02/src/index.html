@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title> Natural Language Processing </title>
+
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale = 1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="styles.css">
+
+	<script type="text/javascript" src="script.js"> </script>
+
+</head>
+
+<body>
+
+	<h1 id="pageheader" align="center"><b>Word Generation</b></h1>
+
+	<h2><b> Experiment 2 </b></h2>
+
+	<br>
+
+	<div class="row" id="dropdown1" style="border:groove">
+		<p>Select a language which you know better</p>
+		<div class="col-md-12 school-options-dropdown text-center">
+			<select id="selectedEngorHin" autocomplete="off" onchange="display()">
+				<option value="" selected> ---CHOOSE LANGUAGE--- </option>
+				<option value="English"> English </option>
+				<option value="Hindi"> Hindi </option>
+			</select>
+		</div>
+	</div>
+	<!-- =================================================================================================================================== -->
+
+	<br><br><br>
+
+	<p id="instruction" hidden>
+		Select root and features</p>
+
+	<table id="input_table" hidden>
+		<tr>
+			<td align="center" style="color:brown"> ROOT </td>
+			<td align="center" style="color:brown"> CATEGORY </td>
+			<td align="center" style="color:brown"> GENDER </td>
+			<td align="center" style="color:brown"> NUMBER </td>
+			<td align="center" style="color:brown"> PERSON </td>
+			<td align="center" style="color:brown"> CASE </td>
+			<td align="center" style="color:brown"> TENSE </td>
+		</tr>
+
+		<tr>
+			<td align="center">
+				<select id="root" autocomplete="off" onchange="choose(); reset();">
+					<option value="na" selected> na </option>
+				</select>
+			</td>
+
+			<td align="center">
+				<select id="category" onchange="reset()">
+					<option value="verb"> verb </option>
+					<option value="noun"> noun </option>
+					<option value="na" selected> na </option>
+				</select>
+			</td>
+			<td align="center">
+				<select id="gender" onchange="reset()">
+					<option value="male"> male </option>
+					<option value="female"> female </option>
+					<option value="na" selected> na </option>
+				</select>
+			</td>
+			<td align="center">
+				<select id="number" onchange="reset()">
+					<option value="singular"> singular </option>
+					<option value="plural"> plural </option>
+					<option value="na" selected> na </option>
+				</select>
+			</td>
+			<td align="center">
+				<select id="person" onchange="reset()">
+					<option value="first"> first </option>
+					<option value="second"> second </option>
+					<option value="third"> third </option>
+					<option value="na" selected> na </option>
+				</select>
+			</td>
+			<td align="center">
+				<select id="case" onchange="reset()">
+					<option value="direct"> direct </option>
+					<option value="oblique"> oblique </option>
+					<option value="na" selected> na </option>
+				</select>
+			</td>
+			<td align="center">
+				<select id="tense" onchange="reset()">
+					<option value="simple-present"> simple-present </option>
+					<option value="simple-future"> simple-future </option>
+					<option value="present-continuous"> present-continuous </option>
+					<option value="past-continuous"> past-continuous </option>
+					<option value="future-continuous"> future-continuous </option>
+					<option value="present-perfect-continuous"> present-perfect-continuous </option>
+					<option value="past-perfect-continuous"> past-perfect-continuous </option>
+					<option value="future-perfect-continuous"> future-perfect-continuous </option>
+					<option value="simple-past"> simple-past </option>
+					<option value="present-perfect"> present-perfect </option>
+					<option value="past-perfect"> past-perfect </option>
+					<option value="future-perfect"> future-perfect </option>
+					<option value="na" selected> na </option>
+				</select>
+			</td>
+		</tr>
+	</table>
+
+	<br><br>
+	<div class="row" id="dropdown2" hidden>
+		<div class="col-md-12 school-options-dropdown text-center">
+			<select id="selectword" onchange="word_select(); reset();">
+				<option value="" selected> ---Select Word--- </option>
+			</select>
+		</div>
+	</div>
+
+	<br><br>
+	<div align="center">
+		<button style="visibility:hidden;" id="check" class="buttonc button2c" onclick="check()">Check</button>
+		<br><br>
+		<p id="verdict" hidden></p>
+	</div>
+	<br>
+	<div align="center" id="ans_div" hidden>
+		<button class="buttonc button2c" id="ans_button" onclick="show_answers()">Get Answer</button>
+	</div>
+	<br><br><br>
+
+	<p style="color:black" id="answers" hidden> </p>
+
+</body>

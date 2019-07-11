@@ -1,0 +1,148 @@
+select{
+  padding: 5px;
+
+  font-size: 20px;
+
+  text-align: center;
+}
+
+#pageheader{
+  margin-top: 30px;
+
+  margin-left: 0px;
+}
+
+.wrapper{
+  text-align: center;
+}
+
+h2{
+  margin-left: 250px;
+}
+
+h1{
+  margin-left: 250px;
+}
+
+p
+{
+  text-align: center;
+
+  font-size: 20px;
+
+  color:blue;
+}
+
+#right{
+  color: green;
+}
+
+#wrong{
+  color: red;
+}
+
+.button, .button1{
+
+  font-size: 20px;
+
+  background-color: #4CAF50;
+  
+  border: none;
+  
+  color: white;
+  
+  padding: 15px 32px;
+  
+  text-align: center;
+  
+  text-decoration: none;
+  
+  display: inline-block;
+  
+  margin: 4px 2px;
+  
+  cursor: pointer;
+}
+
+#reform
+{
+  margin: auto;
+
+  display: block;
+
+  font-size: 24px;
+}
+
+
+#input_table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#input_table td, #input_table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* #input_table tr:nth-child(even){background-color: #f2f2f2;} */
+
+#input_table tr:hover {background-color: #ddd;}
+
+#input_table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.buttonc {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button2c {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2c:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+
+#answers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#answers td, #answers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* #answers tr:nth-child(even){background-color: #f2f2f2;} */
+
+#answers tr:hover {background-color: #ddd;}
+
+#answers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
