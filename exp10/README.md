@@ -1,5 +1,4 @@
-# Building POS Tagger
-
+# Building Chunker
 
 ## Open the src folder in terminal and run 
 ``` python -m SimpleHTTPServer ```
